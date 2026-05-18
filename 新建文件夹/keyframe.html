@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .animated-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            position: relative;
+        }
+        .car-box{   
+            position: absolute;
+            animation-name: moveforward, car-rotate;
+            animation-duration: 1s, 2s;
+            animation-delay: 0s, 1s;
+            animation-iteration-count: 1, 1;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+        .tome{
+            width: 20px;
+            height: 100px;
+            position: absolute;
+            top: 120px;
+            left: 950px;
+            background-color: black;
+        }
+
+        @keyframes moveforward{
+            0%{
+                left: 0;
+            }
+            100%{
+                left: 700px;
+            }
+        }
+        @keyframes car-rotate{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                left: 950px;
+                transform: rotate(235deg);
+            }
+        }
+        
+   /style>
+    <div  class="animation">
+        <div class="car-box">
+            <img src="https://www.shutterstock.com/image-vector/cabriolet-convertible-car-auto-road-260nw-2654877827.jpg" alt="Car"> 
+
+        </div>
+    </div>
+    
+</body>
+</html>

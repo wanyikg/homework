@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <style>
+      body{
+        margin:50px;
+        height:200vh;
+        background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkvjPusZy8k-RYpVuA6_nJSTFgjQSXnPEBg&s);
+        height:650px;
+        background-size:cover;
+        background-position:center;
+        backround-repeat:no-repeat;
+
+      }
+        .animated-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            position: relative;
+        }
+        .bowling-box{  
+            top:100px; 
+            position: absolute;
+            animation-name: moveforward, boling-rotate;
+            animation-duration: 1s, 2s;
+            animation-delay: 0s, 1s;
+            animation-iteration-count: 1, 1;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+           
+        }
+        .bowling-box img{
+            transform: scale(0.5);
+        }
+        .animation img{
+            width: 200px;
+            height: 200px;
+        }
+        .bowling-pin-box{  
+             width: 200px;
+            height: 100px;
+            left: 900px;
+            top:150px;
+            position: absolute;
+            animation-name:  bowling-pin-rotate;
+            animation-duration:  1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            background-color: transparent;
+        }
+        @keyframes moveforward{
+            0%{
+                left: 0;
+            }
+            100%{
+                left: 1100px;
+                transform:rotate(9000deg)
+            }
+        }
+        @keyframes bowling-pin-rotate{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                left: 900px;
+                transform: rotate(90deg);
+            }
+        }
+        </style>
+        
+    <div  class="animation">
+        <img src="./16pic_723616_b-removebg-preview.png" alt="bowling">
+        <div class="bowling-box">
+            <img   src="16pic_723616_b小豌豆-removebg-preview.png" alt="bowling">
+        </div>
+
+        <div class="bowling-pin-box">
+            <img src="images-removebg-preview.png" alt="bowling-pin">
+        </div>
+    </div>    
+    
+</body>
+</html>
+</body>
+</html>
