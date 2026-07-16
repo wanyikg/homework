@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+    h1{
+        color: #333;
+    }
+    h2{
+        color: #555;
+    }
+    div{
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .list{
+        display: flex;
+        gap: 20px;
+    }   
+</style>
+<body>
+    <h1>Multiply List</h1>
+    
+   
+    <div class="list">
+       
+    </div>
+    
+
+   <script>
+
+     for(let i=1;i<=12;i++){
+        document.querySelector(`.list`).innerHTML+=`<div><h2>Multiplication Table of ${i}</h2><div id="MultiplicationTableof${i}"></div></div>`;
+        for(let j=1;j<=12;j++){
+            document.querySelector(`#MultiplicationTableof${i}`).innerHTML+=`<p>${i}x${j}=${i*j}</p>`;
+        }   
+     }  
+
+     
+   </script>
+
+
+  
+</body>
+</html>

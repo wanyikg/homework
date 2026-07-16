@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <style>
+        .card{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1px;
+            width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0px 15px rgba(0, 0, 0, 1);
+            padding: 16px;
+            gap: 30px;
+            background: #c3c2c2;
+            background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 70%);
+            text-align:left;
+            margin: 10% auto;
+        }
+        
+
+        .card .person-detail{
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+
+        }
+        .card p{
+            font-size: 20px;
+            margin-left: 5px;
+            margin: 18px 0;
+        }
+        </style>
+
+    <div class="card">
+        <div class="person-detail">
+         <label for="username">Username:</label>
+         <br>
+         <input type="text" id="username" name="username" placeholder="eg john_doe">
+         <br>
+         <label for="password">Password:</label>
+         <br>
+         <input type="password" id="password" oninput="checkpasswords()" name="password" placeholder="eg abc123">
+         <br>
+         <label for="confirm_password">Confirm Password:</label>
+         <br>
+         <input type="password" id="confirm_password" oninput="checkpasswords()" name="confirm_password" placeholder="eg abc123">
+         <br>
+         <p id="message"></p>
+         <button type="button">register</button>
+          <br>
+          <a href="login.html"> already have an account click me to login</a>
+        </div>
+    </div>
+    
+<script>
+        const button=document.querySelector("button");
+        button.addEventListener("click",()=>{
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm_password").value;
+            if(password !== confirmPassword){
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+            // Here you can add code to save the new user's credentials
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            alert("Registration successful! You can now log in.");
+            window.location.href='login.html';
+        });
+
+        function checkpasswords(){
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm_password").value;
+            const message = document.getElementById("message");
+
+            if(password == confirmPassword){
+                message.style.color = "green";
+                message.textContent = "Passwords match";
+            } else {
+                message.style.color = "red";
+                message.textContent = "Passwords do not match";
+            }
+        }
+    
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Question 1: use javascript regex to find the word "apple" in followng sentent</h3>
+    <p id="word">I have an apple, i have a pen. apple plus pen = apple pen</p>
+    <p id="result"></p>
+    <h3> Question 2: use javascript regex to replace the numbers to *</h3>
+    <p id="word2">123jasdb3k435mm451m437</p>
+    <p id="result2"></p>
+    <h3> Question 3: use javascript regex to split the string by commas</h3>
+    <p id="word3">apple,banana,orange</p>
+    <p id="result3"></p>
+
+    <script>
+        let word=document.getElementById("word").innerText;
+        const result=document.getElementById("result");
+        //answer for question1
+         result.innerText=word.match(/apple/gi);
+
+        let word2=document.getElementById("word2").innerText;
+        const result2=document.getElementById("result2");
+        //answer for question2
+        result2.innerText=word2.replace(/\d+/g,"*");
+
+        let word3=document.getElementById("word3").innerText;
+        const result3=document.getElementById("result3");
+       //answer for question3
+        result3.innerHTML=word3.split(/,/g).join("<br>");
+    </script>   
+
+</body>
+</html> 
